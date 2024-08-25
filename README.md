@@ -13,8 +13,9 @@ When the user inserts the query, the multiquery retriever will create a query ad
 # USE
 
 1. pip install requirements.txt
-2. Deploy Qdrant using Docker-Compose --> Run image qdrant
-3. deployment streamlit : streamlit run main.py
+2. Insert your credential of Gemini-Pro in the .env file
+3. Deploy Qdrant using Docker-Compose --> Run image qdrant
+4. deployment streamlit : streamlit run main.py
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Deployment
