@@ -1,0 +1,60 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    restart: always
+    container_name: qdrant
+    ports:
+      - 6333:6333
+      - 6334:6334
+    expose:
+      - 6333
+      - 6334
+      - 6335
+    configs:
+      - source: qdrant_config
+        target: /qdrant/config/production.yaml
+    volumes:
+      - ./qdrant_data:/qdrant/storage
+
+
+  langfuse-server:
+    image: langfuse/langfuse:2
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - 3000:3000
+    environment:
+      LANGFUSE_POSTGRES_HOST: localhost
+      LANGFUSE_POSTGRES_PORT: 5432
+      LANGFUSE_POSTGRES_DB:  postgres
+      LANGFUSE_POSTGRES_USER: postgres
+      LANGFUSE_POSTGRES_PASSWORD: asd1234
+      LANGFUSE_TELEMETRY_ENABLE: "true"
+      LANGFUSE_API_KEY: pk-lf-5578fa4d-95f7-43b3-9741-3b82a2fe39e8
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: asd1234
+      POSTGRES_DB: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - database_data:/var/lib/postgresql/data
+
+
+volumes:
+  database_data:
+    driver: local
+
+configs:
+  qdrant_config:
+    content: |
+      log_level: INFO  
+
+
+
+    

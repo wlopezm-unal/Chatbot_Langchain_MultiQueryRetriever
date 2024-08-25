@@ -1,0 +1,15 @@
+langchain==0.2.1
+streamlit==1.35.0
+uvicorn==0.30.1
+python-dotenv
+google-generativeai
+langchain_openai
+PyPDF2==3.0.1
+langchain_google_genai
+tiktoken  # required for splitting document by number of tokens
+sentence_transformers  # for creating embeddings
+langchain-community
+qdrant-client
+pypdf
+langchain_groq
+langfuse
