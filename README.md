@@ -5,11 +5,15 @@ Chatbot where you can chat with your PDF. It consists of a multiretriever and mu
 When the user inserts the query, the multiquery retriever will create a query adjacent to the original one, having two queries, where they will be used to search for the documentation in the Qdrant summary and split collections. Only two collections were selected for the search due to the limitation of the number of tokens to be passed to the LLM model. 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Chatbot logic diagram
+
+![image](https://github.com/user-attachments/assets/040dd0c9-d22d-46f3-9609-f6879cfe1f4b)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # USE
 
 1. pip install requirements.txt
-2. Deploy Qdrant using Docker-Compose
-   2.1 Run image qdrant
+2. Deploy Qdrant using Docker-Compose --> Run image qdrant
 3. deployment streamlit : streamlit run main.py
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
