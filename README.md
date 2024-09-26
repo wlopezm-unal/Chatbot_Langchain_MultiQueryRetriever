@@ -1,4 +1,4 @@
-﻿# Chatbot using Langchain's model for chatting with your PDF's
+﻿# Chatbot using Langchain's model for chatting with your PDF's |Chatbot using Langchain and RAG Advanced with MultiQueryRetrieve and Multivectorstore|
  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Chatbot where you can chat with your PDF. It consists of a multiretriever and multivector model. When you insert your PDF it will generate a split and a summary of your documents, where in a vectorial base Qdrant will save the complete document, the split and a summary of the document in different collections respectively. 
